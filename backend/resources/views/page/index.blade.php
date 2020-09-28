@@ -6,17 +6,16 @@
         <title>Laravel DemoApp</title>
     </head>
     <body>
-        <h1>Page : index</h1>{{$str}}<br>
-        <br>
-        <b>Request：</b><br>
-        <pre>{{$request}}</pre>
-        <b>Response：</b><br>
-        <pre>{{$response}}</pre>
-      <form method="POST" action="/page">
-{{csrf_field()}}
-TITLE:  <input type="text" name="title"><br>
-BODY:   <input type="text" name="body">
-<input type="submit">
-</form>
+        <form method="POST" action="/page">
+          @csrf
+          <ul>
+@foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+@endforeach
+</ul>
+          TITLE:  <input type="text" name="title" value="{{old('title')}}"><br>
+          BODY:   <input type="text" name="body" value="{{old('body')}}">
+          <input type="submit" value="送信ボタン">
+        </form>
     </body>
 </html>

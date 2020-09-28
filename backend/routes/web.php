@@ -1,4 +1,8 @@
 <?php
 
-Route::get('/','PageController@index');//前述の内容
+Route::get('/','CalendarController@index');
 Route::post('/page','PageController@post');
+Route::get('/list','ItemController@getList');
+Route::get('/holiday','CalendarController@getHoliday');
+Route::post('/holiday','CalendarController@postHoliday');
+Route::get('/holiday/{id}','CalendarController@getHolidayId');
