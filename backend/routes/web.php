@@ -6,3 +6,6 @@ Route::get('/list','ItemController@getList');
 Route::get('/holiday','CalendarController@getHoliday');
 Route::post('/holiday','CalendarController@postHoliday');
 Route::get('/holiday/{id}','CalendarController@getHolidayId');
+
+//gmap
+Route::get('/gmap','GmapsController@view');
