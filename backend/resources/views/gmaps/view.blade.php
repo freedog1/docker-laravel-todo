@@ -7,7 +7,8 @@
     <script type="text/javascript" src="bower_components/gmaps/gmaps.min.js"></script>
     <script type="text/javascript">
       // コントローラから渡された住所を取得
-      var addressStr = "{!! $address !!}";
+      var addressStr = $gmapinfo['address'];
+      var myKeyStr = $gmapinfo['myKey'];
  
       $(document).ready(function(){
           // Gmapsを利用してマップを生成
@@ -42,7 +43,8 @@
   </head>
   <body>
     <h1>Gmaps.js テスト</h1>
-    <p>住所：{{ $address }}</p>
+    <p>住所：{{ $address ?? '' }}</p>
+    <p>api：{{ $address ?? '' }}</p>
     <div id="map"></div>
   </body>
 </html>
